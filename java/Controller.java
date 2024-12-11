@@ -16,7 +16,7 @@ public class Controller {
 
     @GetMapping()
     public RedirectView home() {
-        return new RedirectView("https://discord.gg/jGuGHr4f");
+        return new RedirectView("https://discord.gg/yvdDjgPwxf");
     }
 
     @GetMapping("/{id}")
