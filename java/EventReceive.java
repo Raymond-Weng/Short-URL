@@ -30,7 +30,7 @@ public class EventReceive implements EventListener {
                 ps.executeUpdate();
                 ps.close();
                 connection.close();
-                ((MessageReceivedEvent) genericEvent).getMessage().reply("https://link.rwc.us.kg/" + id).queue();
+                ((MessageReceivedEvent) genericEvent).getMessage().reply("https://rwlink.us.kg/" + id).queue();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
