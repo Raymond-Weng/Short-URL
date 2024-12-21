@@ -30,6 +30,9 @@ public class DemoApplication {
                         "(KEY TEXT NOT NULL," +
                         "LINK TEXT NOT NULL)");
                 statement.close();
+                statement = connection.createStatement();
+                statement.execute("CREATE UNIQUE INDEX key_index ON LINKS (KEY)");
+                statement.close();
                 connection.close();
 
                 connection = DriverManager.getConnection("jdbc:sqlite:./database/keys.db");
@@ -40,6 +43,7 @@ public class DemoApplication {
                 statement.close();
                 statement = connection.createStatement();
                 statement.execute("INSERT INTO KEYS (KEY) VALUES ('AAA')");
+                statement.close();
                 connection.close();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
